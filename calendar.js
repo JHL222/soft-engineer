@@ -11,7 +11,7 @@ function renderCalendar() {
     let html = '<table>';
 
     // 테이블 헤더
-    html += '<thead><tr>';
+    html += `<thead><tr><b>` + currentMonth + `월</b></tr><tr>`;
     html += '<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>';
     html += '</tr></thead>';
 
