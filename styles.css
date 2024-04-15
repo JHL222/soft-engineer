@@ -18,6 +18,14 @@ header h1 {
   padding-left: 10px; /* 텍스트를 왼쪽으로 조금 이동 */
 }
 
+
+.container {
+  display: grid;
+  margin-left: 5%;
+  grid-template-columns: 25% 30% 30%;
+  grid-template-rows: 100px 300px 300px 300px;
+}
+
 /* 네비게이션 스타일 */
 nav ul {
   list-style-type: none;
@@ -46,9 +54,8 @@ main {
 
 /* 로그인 폼 스타일 */
 .login-box {
-  width: 250px;
-  margin: 80px 0 0 105px;
-  padding: 20px;
+  grid-row: 2;
+  width: 80%;
   border: 1px solid #ccc;
   border-radius: 13px;
   text-align: center;
@@ -58,7 +65,7 @@ main {
 .login-form input[type="password"] {
   padding: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
 }
 
@@ -77,9 +84,9 @@ main {
 
 /* 캘린더 스타일 */
 #calendar {
-  width: 250px;
-  margin: 40px 0 0 105px;
-  padding: 20px;
+  grid-row: 3;
+  width: 80%;
+  margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 13px;
   text-align: center;
@@ -87,12 +94,62 @@ main {
 
 /* 사건 현황 스타일 */
 #incident-status {
-  width: 300px;
-  margin: 10px auto 0; /* 상단 여백  좌우 마진을 auto로 설정하여 가운데 정렬 */
-  padding: 20px;
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 13px;
   text-align: center;
-  background-color: #2E2E2E; /* 배경색 설정 */
-  color: #fff; /* 텍스트 색상 설정 */
+}
+#drive-educate{
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+#sponsor{
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+#law{
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+#report{
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.overlap {
+  position: fixed;
+  margin-top: 100px;
+  right: 5px;
+  width: 12%;
+  height: 300px;
+}
+
+.nav1, .nav2, .nav3, .nav4, .nav5 {
+  border: 1px solid;
+  text-align: center;
+  height: 15%;
+  font-size: 120%;
 }
