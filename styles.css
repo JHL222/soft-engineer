@@ -142,6 +142,7 @@ main {
 .overlap {
   position: fixed;
   margin-top: 100px;
+  border-radius: 13px;
   right: 5px;
   width: 12%;
   height: 300px;
