@@ -1,51 +1,88 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="macbook-air">
-      <div class="div">
-        <div class="main"></div>
-        <div class="login">
-          <div class="overlap">
-            <div class="ID"></div>
-            <div class="PW"></div>
-            <div class="group">
-              <div class="overlap-group"><div class="text-wrapper">회원가입</div></div>
-            </div>
-            <div class="overlap-wrapper">
-              <div class="overlap-group"><div class="text-wrapper-2">로그인</div></div>
-            </div>
-            <div class="text-wrapper-3">비밀번호 :</div>
-            <div class="text-wrapper-4">아이디 :</div>
-          </div>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRC</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> <!-- 새로운 글꼴 링크 추가 -->
+    <style>
+       
+        .container {
+            display: flex;
+            align-items: center; 
+        }
+
+        .login-box {
+            width: 250px;
+            margin-right: 20px; 
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 13px;
+            text-align: center;
+        }
+
+        #incident-status {
+            width: 250px;
+            margin-left: auto; 
+
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #2E2E2E; 
+            color: #fff; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RRC</h1>
+        <nav>
+            <ul>
+                <li><a href="#">자료실</a></li>
+                <li>|</li>
+                <li><a href="#">게시판</a></li>
+                <li>|</li>
+                <li><a href="#">후원활동</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 로그인 폼과 사건 현황 -->
+    <div class="container">
+        <!-- 로그인 폼 -->
+        <div class="login-box">
+            <h2>로그인</h2>
+            <form class="login-form">
+                <input type="text" placeholder="사용자 이름" required>
+                <br>
+                <input type="password" placeholder="비밀번호" required>
+                <br>
+                <button type="submit" id="register">회원가입</button>
+                <button type="submit" id="login">로그인</button>
+            </form>
         </div>
-        <div class="nav">
-          <div class="overlap-2">
-            <div class="div-wrapper"><div class="text-wrapper-5">사건 현황과 통계 자료</div></div>
-            <div class="overlap-group-2"><div class="text-wrapper-6">안전 운전 교육</div></div>
-            <div class="overlap-3"><p class="p">사회적 참여 및 후원 활동</p></div>
-            <div class="overlap-4"><div class="text-wrapper-7">시민 참여형 프로젝트</div></div>
-            <div class="overlap-5"><div class="text-wrapper-8">제보 및 신고 시스템</div></div>
-            <div class="overlap-6"><div class="text-wrapper-9">교통법 및 규정 설명</div></div>
-            <div class="overlap-7"><div class="text-wrapper-10">다양한 콘텐츠 제공</div></div>
-          </div>
+
+        <!-- 사건 현황 -->
+        <div id="incident-status">
+            <h2>사건 현황</h2>
+            <!-- 여기에 사건 현황을 표시할 내용을 넣어주세요 -->
         </div>
-        <header class="header">
-          <div class="logo">
-            <div class="overlap-group-3">
-              <div class="rectangle"></div>
-              <div class="text-wrapper-11">Logo</div>
-            </div>
-          </div>
-        </header>
-        <div class="banner">
-          <div class="overlap-8"><div class="text-wrapper-12">슬라이드 추가</div></div>
-        </div>
-      </div>
     </div>
-  </body>
+
+    <main>
+        <!-- 캘린더 -->
+        <div id="calendar"></div>
+    </main>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="calendar.js"></script>
+
+<footer>
+    <p>RRC</p>
+</footer>
+</body>
 </html>

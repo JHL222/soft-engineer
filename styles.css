@@ -1,0 +1,98 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 설정 */
+  line-height: 1.5; /* 줄 간격 설정 */
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #2E2E2E;
+  color: #fff;
+  padding: 23px 0;
+  text-align: center; /* 헤더 텍스트를 가운데 정렬 */
+}
+
+/* 헤더 내부의 h1 요소 스타일 */
+header h1 {
+  margin: 0; /* 기본 마진 제거 */
+  font-size: 70px; /* 글자 크기를 설정 */
+  padding-left: 10px; /* 텍스트를 왼쪽으로 조금 이동 */
+}
+
+/* 네비게이션 스타일 */
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center; /* 네비게이션 메뉴를 가운데 정렬 */
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 80px; /* 적절한 값으로 수정 */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* 마지막 메뉴 항목의 간격을 없앰 */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 메인 영역 스타일 */
+main {
+  padding: 0px;
+}
+
+/* 로그인 폼 스타일 */
+.login-box {
+  width: 250px;
+  margin: 80px 0 0 105px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+/* 캘린더 스타일 */
+#calendar {
+  width: 250px;
+  margin: 40px 0 0 105px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+
+/* 사건 현황 스타일 */
+#incident-status {
+  width: 300px;
+  margin: 10px auto 0; /* 상단 여백  좌우 마진을 auto로 설정하여 가운데 정렬 */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+  background-color: #2E2E2E; /* 배경색 설정 */
+  color: #fff; /* 텍스트 색상 설정 */
+}
