@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .join-form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="join-form" action="Join.php" method="post" >
+        <input type="text" name="name" placeholder="이름" required><br>
+        <input type="text" name="id" placeholder="아이디" required><br>
+        <input type="password" name="password" placeholder="비밀번호" required><br>
+        <input type="password" name="confirm_password" placeholder="비밀번호 확인" required><br>
+        <button type="submit">회원가입</button>
+        <input type="button" value="닫 기" onclick="self.close();" />
+    </form>
+</body>
+</html>
