@@ -12,9 +12,8 @@ header {
   color: #fff;
   padding: 23px 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0;
+  width: 100%;
 }
 
 header a {
@@ -25,14 +24,10 @@ header a {
   justify-content: center;
 }
 
-/* 헤더 내부의 h1 요소 스타일 */
 header h1 {
   margin: 0;
-  /* 기본 마진 제거 */
   font-size: 70px;
-  /* 글자 크기를 설정 */
   padding-left: 10px;
-  /* 텍스트를 왼쪽으로 조금 이동 */
 }
 
 
@@ -43,7 +38,6 @@ header h1 {
   grid-template-rows: 100px 300px 300px 300px;
 }
 
-/* 네비게이션 스타일 */
 nav ul {
   list-style-type: none;
   padding: 10px;
@@ -113,12 +107,6 @@ main {
   position: absolute;
 }
 
-.content {
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
 
 /* 캘린더 스타일 */
 #calendar {
@@ -130,64 +118,34 @@ main {
   text-align: center;
 }
 
-/* 사건 현황 스타일 */
-#incident-status {
-  grid-row: 2 / 5;
-  grid-column: 2 / 4;
-  margin-left: 20px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  text-align: center;
-}
-
-#drive-educate {
-  grid-row: 2 / 5;
-  grid-column: 2 / 4;
-  margin-left: 20px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  text-align: center;
-}
-
-#sponsor {
-  grid-row: 2 / 5;
-  grid-column: 2 / 4;
-  margin-left: 20px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  text-align: center;
-}
-
-#law {
-  grid-row: 2 / 5;
-  grid-column: 2 / 4;
-  margin-left: 20px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  text-align: center;
-}
-
+#incident-status,
+#drive-educate,
+#sponsor,
+#law,
 #report {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
-  margin-left: 20px;
+  margin-left: -20px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 13px;
   text-align: center;
+  overflow: scroll;
 }
+#incident-table {
+  margin-left: 10%;
+  width: 80%;
+  border-collapse: collapse;
+}
+
 
 .overlap {
   position: fixed;
   margin-top: 100px;
   border-radius: 13px;
   right: 5px;
-  width: 12%;
-  height: 300px;
+  width: 10%;
+  background-color: #333;
 }
 
 .nav1,
@@ -195,11 +153,32 @@ main {
 .nav3,
 .nav4,
 .nav5 {
-  border: 1px solid;
   text-align: center;
   height: 15%;
   font-size: 120%;
 }
+.text-wrapper-1, .text-wrapper-2, .text-wrapper-3, .text-wrapper-4, .text-wrapper-5 {
+  color: #fff; 
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.text-wrapper-1:hover, .text-wrapper-2:hover, .text-wrapper-3:hover, .text-wrapper-4:hover, .text-wrapper-5:hover {
+  background-color: #555;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container {
+  width: 70%;
+}
+
 
 .submenu {
   display: none;
@@ -233,14 +212,7 @@ main {
   text-align: center;
 }
 
-.text-wrapper-1:hover,
-.text-wrapper-2:hover,
-.text-wrapper-3:hover,
-.text-wrapper-4:hover,
-.text-wrapper-5:hover {
-  cursor: pointer;
-}
-/* 이전과 동일한 스타일 */
+
 
 /* 캘린더 컨테이너 스타일 */
 #calendar-container {
@@ -253,8 +225,7 @@ main {
 /* 달력 테이블 스타일 */
 #calendar table {
   border-collapse: collapse;
-  border: 1px solid #ddd;
-  width: 100%; /* 달력의 너비를 조정합니다. */
+  width: 100%; 
 }
 
 #calendar table th,
@@ -275,3 +246,32 @@ main {
 #calendar table td:hover {
   background-color: #f2f2f2;
 }
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2E2E2E;
+  color: #fff;
+} 

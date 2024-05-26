@@ -11,8 +11,8 @@ function renderCalendar() {
     let html = '<table>';
 
     // 테이블 헤더
-    html += `<thead><tr><b>` + currentMonth + `월</b></tr><tr>`;
-    html += '<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>';
+    html += `<thead><tr><th colspan="7">${currentMonth + 1}월</th></tr><tr>`;
+    html += '<th class="sunday">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="saturday">토</th>';
     html += '</tr></thead>';
 
     // 테이블 바디
@@ -26,7 +26,13 @@ function renderCalendar() {
 
     // 날짜 채우기
     for (let i = firstDayOfMonth; i < 7; i++) {
-        html += `<td>${dayCount}</td>`;
+        if (i === 0) {
+            html += `<td class="sunday">${dayCount}</td>`;
+        } else if (i === 6) {
+            html += `<td class="saturday">${dayCount}</td>`;
+        } else {
+            html += `<td>${dayCount}</td>`;
+        }
         dayCount++;
     }
     html += '</tr>';
@@ -35,7 +41,13 @@ function renderCalendar() {
     while (dayCount <= daysInMonth) {
         html += '<tr>';
         for (let i = 0; i < 7 && dayCount <= daysInMonth; i++) {
-            html += `<td>${dayCount}</td>`;
+            if (i === 0) {
+                html += `<td class="sunday">${dayCount}</td>`;
+            } else if (i === 6) {
+                html += `<td class="saturday">${dayCount}</td>`;
+            } else {
+                html += `<td>${dayCount}</td>`;
+            }
             dayCount++;
         }
         html += '</tr>';
@@ -47,4 +59,3 @@ function renderCalendar() {
 }
 
 renderCalendar();
-
