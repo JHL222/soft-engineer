@@ -1,34 +1,73 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RRC</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
+  <!-- 새로운 글꼴 링크 추가 -->
   <script src="index.js"></script>
+  <style>
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      min-width: 100px;
+      z-index: 1;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
 
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2E2E2E;
+      color: #fff;
+    }
+  </style>
+</head>
+  </style>
 </head>
 
 <body>
   <header>
-    <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">oad</span>
-    <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">espect</span>
-    <span style="font-size:500%;"><b>C</b></span><span style="font-size:300%;">ampaign</span>
-
+    <a href="index.html">
+      <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">oad</span>&emsp;
+      <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">espect</span>&emsp;
+      <span style="font-size:500%;"><b>C</b></span><span style="font-size:300%;">ampaign</span>
+    </a>
     <nav>
       <ul>
-        <li><a href="#">RRC소개</a></li>
+        <li class="menu-item">
+          <a href="#">RRC소개</a> &emsp;&emsp;&emsp;
+          <ul class="submenu">
+            <li><a href="index1.html">소개1</a></li>
+            <li><a href="#">소개2</a></li>
+          </ul>
+        </li>
         <li><a href="#">|</a></li>
-        <li><a href="#">자료실</a></li>
+        <li class="menu-item">
+          <a href="#">자료실</a>&emsp;&emsp;&emsp;
+          <ul class="submenu">
+            <li><a href="index2.html">자료1</a></li>
+            <li><a href="#">자료2</a></li>
+          </ul>
+        </li>
         <li><a href="#">|</a></li>
-        <li><a href="#">후원안내</a></li>
-        <li><a href="#">|</a></li>
-        <li><a href="#">공모전</a></li>
+        <li class="menu-item">
+          <a href="#">후원안내 및 공모전</a>&emsp;&emsp;&emsp;
+          <ul class="submenu">
+            <li><a href="index3.html">후원1</a></li>
+            <li><a href="#">후원2</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
@@ -39,12 +78,9 @@
     <div class="login-box">
       <h2>로그인</h2>
       <form class="login-form">
-        <input type="text" placeholder="사용자 이름" required>
-        <br>
-        <input type="password" placeholder="비밀번호" required>
-        <br>
-        <button type="submit" id="register">회원가입</button>
-        <button type="submit" id="login">로그인</button>
+        <input type="text" placeholder="사용자 이름" required><br>
+        <input type="password" placeholder="비밀번호" required><br>
+        <button type="submit">로그인</button>
       </form>
     </div>
 
@@ -53,7 +89,7 @@
     <div class="nav">
       <div class="overlap">
         <div class="nav1">
-          <div class="text-wrapper-1" onclick="showIncidentStatus()">사건 현황</div>
+          <div class="text-wrapper-1" onclick="showIncidentStatus()">사건 현황 </div>
         </div>
         <div class="nav2">
           <div class="text-wrapper-2" onclick="showDriveEducate()">안전 운전 교육</div>
@@ -84,17 +120,22 @@
       <!-- 여기에 사건 현황을 표시할 내용을 넣어주세요 -->
     </div>
     <div id="law">
-      <h2>교통법</h2>
+      <h2>교통법 및 규정 설명</h2>
       <!-- 여기에 사건 현황을 표시할 내용을 넣어주세요 -->
     </div>
     <div id="report">
-      <h2>제보</h2>
+      <h2>제보 및 신고 시스템</h2>
       <!-- 여기에 사건 현황을 표시할 내용을 넣어주세요 -->
+    </div>
+    
+    <div id="calendar-container">
+      <div id="calendar"></div>
     </div>
     <script src="calendar.js"></script>
 
   </div>
   <footer>
+    &copy; 2024 Road Respect Campaign
   </footer>
 </body>
 

@@ -1,21 +1,38 @@
 body {
-  font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 설정 */
-  line-height: 1.5; /* 줄 간격 설정 */
+  font-family: 'Noto Sans KR', sans-serif;
+  /* 한글 폰트 설정 */
+  line-height: 1.5;
+  /* 줄 간격 설정 */
 }
 
 /* 헤더 스타일 */
+
 header {
   background-color: #2E2E2E;
   color: #fff;
   padding: 23px 0;
-  text-align: center; /* 헤더 텍스트를 가운데 정렬 */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 헤더 내부의 h1 요소 스타일 */
 header h1 {
-  margin: 0; /* 기본 마진 제거 */
-  font-size: 70px; /* 글자 크기를 설정 */
-  padding-left: 10px; /* 텍스트를 왼쪽으로 조금 이동 */
+  margin: 0;
+  /* 기본 마진 제거 */
+  font-size: 70px;
+  /* 글자 크기를 설정 */
+  padding-left: 10px;
+  /* 텍스트를 왼쪽으로 조금 이동 */
 }
 
 
@@ -30,21 +47,30 @@ header h1 {
 nav ul {
   list-style-type: none;
   padding: 10px;
-  text-align: center; /* 네비게이션 메뉴를 가운데 정렬 */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
   display: inline;
-  margin-right: 80px; /* 적절한 값으로 수정 */
+  margin-right: 20px;
+  position: relative;
 }
 
 nav ul li:last-child {
-  margin-right: 0; /* 마지막 메뉴 항목의 간격을 없앰 */
+  margin-right: 0;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  position: relative;
+  font-size: 1.2em;
+}
+nav ul li:hover .submenu {
+  display: block;
 }
 
 /* 메인 영역 스타일 */
@@ -82,12 +108,24 @@ main {
   background-color: #0056b3;
 }
 
+.submenu {
+  display: none;
+  position: absolute;
+}
+
+.content {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
 /* 캘린더 스타일 */
 #calendar {
   grid-row: 3;
   width: 80%;
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 13px;
   text-align: center;
 }
@@ -102,7 +140,8 @@ main {
   border-radius: 13px;
   text-align: center;
 }
-#drive-educate{
+
+#drive-educate {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
   margin-left: 20px;
@@ -111,7 +150,8 @@ main {
   border-radius: 13px;
   text-align: center;
 }
-#sponsor{
+
+#sponsor {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
   margin-left: 20px;
@@ -120,7 +160,8 @@ main {
   border-radius: 13px;
   text-align: center;
 }
-#law{
+
+#law {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
   margin-left: 20px;
@@ -129,7 +170,8 @@ main {
   border-radius: 13px;
   text-align: center;
 }
-#report{
+
+#report {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
   margin-left: 20px;
@@ -148,9 +190,88 @@ main {
   height: 300px;
 }
 
-.nav1, .nav2, .nav3, .nav4, .nav5 {
+.nav1,
+.nav2,
+.nav3,
+.nav4,
+.nav5 {
   border: 1px solid;
   text-align: center;
   height: 15%;
   font-size: 120%;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 500px;
+  /* 너비를 넓히기 위해 값을 조정합니다. */
+  z-index: 1;
+  text-align: center;
+  /* 텍스트 가운데 정렬 */
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.submenu li {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.text-wrapper-1:hover,
+.text-wrapper-2:hover,
+.text-wrapper-3:hover,
+.text-wrapper-4:hover,
+.text-wrapper-5:hover {
+  cursor: pointer;
+}
+/* 이전과 동일한 스타일 */
+
+/* 캘린더 컨테이너 스타일 */
+#calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* 기존에는 #calendar의 margin-top을 여기로 이동했습니다. */
+}
+
+/* 달력 테이블 스타일 */
+#calendar table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  width: 100%; /* 달력의 너비를 조정합니다. */
+}
+
+#calendar table th,
+#calendar table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#calendar table th {
+  background-color: #f2f2f2;
+}
+
+#calendar table td {
+  cursor: pointer;
+}
+
+#calendar table td:hover {
+  background-color: #f2f2f2;
 }
