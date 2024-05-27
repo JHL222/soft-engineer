@@ -247,18 +247,6 @@ main {
   background-color: #f2f2f2;
 }
 
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  min-width: 100px;
-  z-index: 1;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-top: none;
-}
 
 .sunday {
   color: red;
