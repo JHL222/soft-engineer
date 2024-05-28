@@ -2,36 +2,37 @@ window.onload = function () {
     document.getElementById("incident-status").style.display = "block";
     document.getElementById("drive-educate").style.display = "none";
     document.getElementById("law").style.display = "none";
-    document.getElementById("report").style.display = "none";
+    document.getElementById("blackbox").style.display = "none";
 }
 
 function showIncidentStatus() {
     document.getElementById("incident-status").style.display = "block";
     document.getElementById("drive-educate").style.display = "none";
     document.getElementById("law").style.display = "none";
-    document.getElementById("report").style.display = "none";
+    document.getElementById("blackbox").style.display = "none";
 }
 
 function showDriveEducate() {
     document.getElementById("incident-status").style.display = "none";
     document.getElementById("drive-educate").style.display = "block";
     document.getElementById("law").style.display = "none";
-    document.getElementById("report").style.display = "none";
+    document.getElementById("blackbox").style.display = "none";
 }
 
 function showLaw() {
-    document.getElementById("incident-status").style.display = "none";
-    document.getElementById("drive-educate").style.display = "none";
-    document.getElementById("law").style.display = "block";
-    document.getElementById("report").style.display = "none";
+  document.getElementById("incident-status").style.display = "none";
+  document.getElementById("drive-educate").style.display = "none";
+  document.getElementById("law").style.display = "block";
+  document.getElementById("blackbox").style.display = "none";
 }
 
-function showReport() {
+function showBlackbox() {
     document.getElementById("incident-status").style.display = "none";
     document.getElementById("drive-educate").style.display = "none";
     document.getElementById("law").style.display = "none";
-    document.getElementById("report").style.display = "block";
+    document.getElementById("blackbox").style.display = "block";
 }
+
 
 const chartData = {
     labels: ["중앙선 침범", "신호위반", "안전거리 미확보", "안전운전 의무 불이행", "교차로 통행방법 위반", "보행자 보호의무 위반", "기타"],
