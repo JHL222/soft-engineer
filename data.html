@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RRC</title>
+  <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">oad</span>&emsp;
+      <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">espect</span>&emsp;
+      <span style="font-size:500%;"><b>C</b></span><span style="font-size:300%;">ampaign</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="./data.html">자료실</a></li>
+        <li>|</li>
+        <li><a href="./contest.html">공모전</a></li>
+        <li>|</li>
+        <li><a href="./quiz1.html">퀴즈</a></li>
+        <li>|</li>
+        <li><a href="./donate.html">후원</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div class="nav">
+      <div class="overlap">
+        <div class="nav1">
+          <div class="text-wrapper-1" onclick="showIncidentStatus()">사고 현황</div>
+        </div>
+        <div class="nav2">
+          <div class="text-wrapper-2" onclick="showDriveEducate()">안전 운전 교육</div>
+        </div>
+        <div class="nav3">
+          <div class="text-wrapper-3" onclick="showLaw()">교통법규</div>
+        </div>
+        <div class="nav4">
+          <div class="text-wrapper-4" onclick="showBlackbox()">한문철</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사건 현황 -->
+    <div id="incident-status">
+      <h2>2022년 천안시 사고 현황</h2>
+      <table border="1" id="incident-table">
+        <tr>
+          <th>총 사고건수</th>
+          <th>사망자수</th>
+          <th>부상자수</th>
+          <th>치사율</th>
+        </tr>
+        <tr>
+          <td>2,937</td>
+          <td>47</td>
+          <td>4,157</td>
+          <td>1.60</td>
+        </tr>
+      </table>
+
+      <h3>법규 위반 사고건수</h3>
+      <div class="chart">
+        <div class="chart-container">
+          <canvas class="my-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="drive-educate">
+      <h2>안전 운전 교육</h2>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/AS4xffVfBCE?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="STOP! 우리 3초만 돌아볼까요" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">STOP! 우리 3초만 돌아볼까요</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/vK4AfwvZvjQ?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="안전속도5030 홍보영상" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">안전속도5030 홍보영상</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/rjjtzdv2KOI?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="음주운전 근절합시다! 2020 음주운전  ZERO 캠페인 실시!" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">음주운전 근절합시다! 2020 음주운전 ZERO 캠페인 실시!</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/eQ_eqTZ5bnM?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="시내 50km/h 속도 제한, 평소보다 얼마나 늦게 도착할까?" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">시내 50km/h 속도 제한, 평소보다 얼마나 늦게 도착할까?</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/TkZi-aWqt08?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="사람이 보이면 일단 멈춤! 도로교통공단 교통안전 춤춤 챌린지" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">사람이 보이면 일단 멈춤! 도로교통공단 교통안전 춤춤 챌린지</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+          <iframe width="600" height="400"
+                  src="https://www.youtube.com/embed/20kUcfJG3Xk?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8"
+                  title="교통약자를 위한 매너운전! 배려운전!" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <p style="text-align: center; font-weight: bold; margin-top: 5px;">교통약자를 위한 매너운전! 배려운전!</p>
+      </div>
+  </div>
+  
+    <div id="law">
+      <h2>도로교통법</h2><br>
+      <hr>
+      <p>
+        <b>제1조(목적)</b><br><br>
+        이 법은 도로에서 일어나는 교통상의 모든 위험과 장해를 방지하고 제거하여 <br>
+        안전하고 원활한 교통을 확보함을 목적으로 한다.
+      </p>
+      <hr>
+      <p>
+        <b>제5조(신호 또는 지시에 따를 의무) </b><br><br>
+        도로를 통행하는 보행자, 차마 또는 노면전차의 운전자는 교통안전시설이 표시하는 신호 또는 지시와 <br>
+        다음 각 호의 어느 하나에 해당하는 사람이 하는 신호 또는 지시를 따라야 한다.
+      </p>
+      <hr>
+      <p>
+        <b>제18조(횡단 등의 금지)</b><br><br>
+        차마의 운전자는 보행자나 다른 차마의 정상적인 통행을 방해할 우려가 있는 경우에는 <br>
+        차마를 운전하여 도로를 횡단하거나 유턴 또는 후진하여서는 아니 된다.
+      </p>
+      <hr>
+      <p>
+        <b>제19조(안전거리 확보 등)</b><br><br>
+        모든 차의 운전자는 같은 방향으로 가고 있는 앞차의 뒤를 따르는 경우에는 앞차가 갑자기 정지하게 되는 경우 <br>
+        그 앞차와의 충돌을 피할 수 있는 필요한 거리를 확보하여야 한다.
+      </p>
+      <hr>
+      <p>
+        <b>제23조(끼어들기의 금지)</b><br><br>
+        모든 차의 운전자는 제22조제2항 각 호의 어느 하나에 해당하는 다른 차 앞으로 끼어들지 못한다.
+      </p>
+      <hr>
+      <p>
+        <b>제43조(무면허운전 등의 금지)</b><br><br>
+        누구든지 제80조에 따라 시ㆍ도경찰청장으로부터 운전면허를 받지 아니하거나 <br>
+        운전면허의 효력이 정지된 경우에는 자동차등을 운전하여서는 아니 된다.
+      </p>
+      <hr>
+      <p>
+        <b>제44조(술에 취한 상태에서의 운전 금지)</b><br><br>
+        누구든지 술에 취한 상태에서 자동차, 노면전차 또는 자전거를 운전하여서는 아니 된다.
+      </p>
+      <hr>
+      <p>
+        <b>제46조의3(난폭운전 금지)</b><br><br>
+        자동차의 운전자는 다음 각 호 중 둘 이상의 행위를 연달아 하거나, 하나의 행위를 지속 또는 반복하여 <br>
+        다른 사람에게 위협 또는 위해를 가하거나 교통상의 위험을 발생하게 하여서는 아니 된다.
+      </p>
+      <hr>
+      <p>
+        <b>제48조(안전운전 및 친환경 경제운전의 의무)</b><br><br>
+        모든 차 또는 노면전차의 운전자는 조향장치와 제동장치, 그 밖의 장치를 정확하게 조작하여야 하며, <br>
+        도로의 교통상황과 차 또는 노면전차의 구조 및 성능에 따라 <br>
+        다른 사람에게 위험과 장해를 주는 속도나 방법으로 운전하여서는 아니 된다.
+      </p>
+    </div>
+    <div id="blackbox">
+      <h2>한문철</h2>
+    </div>
+
+  </div>
+  <footer>
+    &copy; 2024 Road Respect Campaign
+  </footer>
+</body>
+
+</html>
