@@ -33,26 +33,56 @@
 
   <!-- 소개 섹션 -->
   <div class="content">
-    <button class="donate-button">참여하기</button>
+<!--    <button class="donate-button">참여하기</button>-->
     <div class="sponsor-section">
+      <?php
+      // 데이터베이스 연결 설정
+      $servername = "localhost";
+      $username = "software00";
+      $password = "abcabc12!";
+      $dbname = "software00";
+
+      // MySQL 연결 생성
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      // 연결 검사
+      if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+      }
+
+      // 쿼리 실행
+      $sql = "SELECT ContestImage, ContestTitle, ContestDesc, Start_Date, End_Date FROM Contests";
+      $result = $conn->query($sql);
+
+      // 공모전 정보가 있는 경우에만 반복
+      if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+      $contestImage = $row["ContestImage"];
+      $contestTitle = $row["ContestTitle"];
+      $contestDesc = $row["ContestDesc"];
+      $start_Date = $row["Start_Date"];
+      $end_Date = $row["End_Date"];
+      ?>
       <div class="sponsor-row">
         <div class="sponsor-item">
-          <img src="RRC1.jpg" alt="후원 1 이미지" class="sponsor-image">
+          <button class="donate-button">참여하기</button>
+          <img src="<?php echo $contestImage; ?>" alt="후원 이미지" class="sponsor-image">
           <div class="sponsor-text">
-            <h3>공모전</h3>
-            <p>개최 측 : 한국도로교통공사</p>
+            <h3><?php echo $contestTitle; ?></h3>
+            <p><?php echo $contestDesc; ?></p>
+            시작일:<?php echo $start_Date; ?>
+            종료일:<?php echo $end_Date; ?>
           </div>
         </div>
       </div>
-      <div class="sponsor-row">
-        <div class="sponsor-item">
-          <img src="RRC2.jpg" alt="후원 2 이미지" class="sponsor-image">
-          <div class="sponsor-text">
-            <h3>공모전</h3>
-            <p>개최 측 : 한국도로교통공사
-          </div>
-        </div>
-      </div>
+      <?php
+          }
+      } else {
+          echo "0 results";
+      }
+      // 연결 종료
+      $conn->close();
+      ?>
     </div>
   </div>
 
