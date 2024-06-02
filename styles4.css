@@ -51,6 +51,7 @@ body {
   
   .question {
     margin-bottom: 20px;
+    text-align: left;
   }
   
   .question h3 {

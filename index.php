@@ -35,7 +35,7 @@
         <li>|</li>
         <li><a href="./contest.html">공모전</a></li>
         <li>|</li>
-        <li><a href="./quiz1.html">퀴즈</a></li>
+        <li><a href="quiz.html">퀴즈</a></li>
         <li>|</li>
         <li><a href="./donate.html">후원</a></li>
       </ul>

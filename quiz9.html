@@ -47,7 +47,7 @@
             die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT * FROM Quiz LIMIT 5, 5;";
+            $sql = "SELECT * FROM Quiz LIMIT 40, 5;";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRC</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <a href="index.php">
+        <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">oad</span>&emsp;
+        <span style="font-size:500%;"><b>R</b></span><span style="font-size:300%;">espect</span>&emsp;
+        <span style="font-size:500%;"><b>C</b></span><span style="font-size:300%;">ampaign</span>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="./data.html">자료실</a></li>
+            <li>|</li>
+            <li><a href="./contest.html">공모전</a></li>
+            <li>|</li>
+            <li><a href="./quiz.html">퀴즈</a></li>
+            <li>|</li>
+            <li><a href="./donate.html">후원</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 퀴즈 섹션 -->
+<div class="content">
+    <h2>안전 운전 교육</h2>
+    <div class="quiz-section" id="quiz-section">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+    <div class="navigation">
+        <button class="nav-button" onclick="prevPage()">&lt;</button>
+        <button class="nav-button" onclick="nextPage()">&gt;</button>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Road Respect Campaign
+</footer>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 10; // Total number of quiz pages
+
+    const quizzes = {
+        1: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/tSHk8FZW1cc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">점등 활용</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/XJJwMRwuzC8?list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">보행자 보호</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz1.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        2: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=dCzsHGkYe-A&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">도로 주행</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/OE-OYzuO6vw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">공익 광고</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz2.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        3: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=oSwd-OiVOjw&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=6" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">교통안전 캠페인</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=lyLOkJQ4h94&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">어린이 보호구역</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz3.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        4: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=vK4AfwvZvjQ&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=10" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">안전속도 5030</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=eQ_eqTZ5bnM&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=14" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">시내 속도 제한</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz4.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        5: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=rjjtzdv2KOI&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=11" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">음주운전</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/MLaiaHefJuA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">음주운전 라바편</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz5.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        6: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=20kUcfJG3Xk&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=12" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">교통 약자 배려</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/lcLMLuBwNXo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">어르신 배려 운전</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz6.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        7: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=CfePS8hE1m8&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=13" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">오토바이, 전동 킥보드</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/bPpGlQONeVw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">PM라이더</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz7.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        8: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/watch?v=QopYsp-N4a4&list=PLfbZxhPbZke_EVejkbfd_N__MHGrSB2g8&index=5" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">차량 조작</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/p2S4iS0icFI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">운전 중 스마트폰</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz8.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        9: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/Px0cgzxs8oE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">졸음 운전 예방</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/w97fSQcSEhA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">졸음 운전 예방</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz9.html'">문제풀기</button>
+          </div>
+        </div>
+        `,
+        10: `
+        <div class="quiz-row">
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/qCXdxTI4paY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">난폭 운전 라바편</div>
+          </div>
+          <div class="quiz-item">
+            <div class="video-placeholder">
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/ri_nFRdxPjw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">난폭 운전 예방</div>
+          </div>
+          <div class="quiz-item quiz">
+            <button onclick="location.href='quiz10.html'">문제풀기</button>
+          </div>
+        </div>`
+    };
+
+    function loadPage(page) {
+        document.getElementById('quiz-section').innerHTML = quizzes[page];
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            loadPage(currentPage);
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            loadPage(currentPage);
+        }
+    }
+
+    // Load the initial page
+    loadPage(currentPage);
+</script>
+</body>
+
+</html>

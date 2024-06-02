@@ -52,8 +52,8 @@ body {
   }
   
   .video-placeholder {
-    width: 200px;
-    height: 100px;
+    width: 700px;
+    height: 350px;
     background-color: #ccc;
     display: flex;
     align-items: center;
