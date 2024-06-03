@@ -133,6 +133,11 @@ main {
   border-radius: 5px;
 }
 
+#intro-text-wrapper{
+  width: 80%;
+  margin-left: 10%;
+}
+
 /* 캘린더 스타일 */
 #calendar {
   grid-row: 3;
@@ -150,15 +155,13 @@ main {
   grid-row: 2 / 5;
   grid-column: 2 / 4;
   width: 100%;
-  border: 3px solid #ccc;
-  border-radius: 13px;
   text-align: center;
   overflow: scroll;
 }
 
 #incident-table {
-  margin-left: 10%;
-  width: 80%;
+  margin-left: 15%;
+  width: 70%;
   border-collapse: collapse;
 }
 
@@ -262,6 +265,10 @@ main {
   align-items: center;
   margin-top: 20px;
   /* 기존에는 #calendar의 margin-top을 여기로 이동했습니다. */
+}
+
+#calendar {
+  height: 110%;
 }
 
 /* 달력 테이블 스타일 */

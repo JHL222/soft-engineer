@@ -47,7 +47,7 @@
       <?php if (isset($_SESSION['UserName'])): ?>
       <h2><?php echo htmlspecialchars($_SESSION['UserName']); ?>님 환영합니다!</h2>
       <form class="login-form" action="Logout.php" method="post">
-        <button type="submit">로그아웃</button>
+        <button type="submit" id="logout">로그아웃</button>
       </form>
       <?php else: ?>
       <h2>로그인</h2>
@@ -72,10 +72,12 @@
       <img id="intro-image-4" src="RRC4.jpg" alt="Introduction Image 3" style="width:100%;max-width:700px;display:none;">
       <img id="intro-image-5" src="RRC5.jpg" alt="Introduction Image 3" style="width:100%;max-width:700px;display:none;">
       <br>
+      <div id="intro-text-wrapper">
+        <p id="intro-text"></p>
+      </div>
+      <br>
       <button id="prev-btn">이전</button>
       <button id="next-btn">다음</button>
-      <br>
-      <p id="intro-text"></p>
     </div>
     
     
