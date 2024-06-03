@@ -22,7 +22,7 @@
       <ul>
         <li><a href="./data.html">자료실</a></li>
         <li>|</li>
-        <li><a href="./contest.html">공모전</a></li>
+        <li><a href="./contest.php">공모전</a></li>
         <li>|</li>
         <li><a href="quiz.html">퀴즈</a></li>
         <li>|</li>
@@ -51,7 +51,7 @@
       }
 
       // 쿼리 실행
-      $sql = "SELECT ContestImage, ContestTitle, ContestDesc, Start_Date, End_Date FROM Contests";
+      $sql = "SELECT ContestImage, ContestTitle, ContestDesc, Start_Date, End_Date, ContentLink FROM Contests";
       $result = $conn->query($sql);
 
       // 공모전 정보가 있는 경우에만 반복
@@ -62,19 +62,20 @@
       $contestDesc = $row["ContestDesc"];
       $start_Date = $row["Start_Date"];
       $end_Date = $row["End_Date"];
+      $contentLink = $row["ContentLink"]
       ?>
-      <div class="sponsor-row">
-        <div class="sponsor-item">
-          <button class="donate-button">참여하기</button>
-          <img src="<?php echo $contestImage; ?>" alt="후원 이미지" class="sponsor-image">
-          <div class="sponsor-text">
-            <h3><?php echo $contestTitle; ?></h3>
-            <p><?php echo $contestDesc; ?></p>
-            시작일:<?php echo $start_Date; ?>
-            종료일:<?php echo $end_Date; ?>
+          <div class="sponsor-row">
+              <div class="sponsor-item">
+                  <a href="<?php echo $contentLink; ?>" class="donate-button">참여하기</a>
+                  <img src="<?php echo $contestImage; ?>" alt="후원 이미지" class="sponsor-image">
+                  <div class="sponsor-text">
+                      <h3><?php echo $contestTitle; ?></h3>
+                      <p><?php echo $contestDesc; ?></p>
+                      시작일: <?php echo $start_Date; ?><br>
+                      종료일: <?php echo $end_Date; ?>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
       <?php
           }
       } else {
