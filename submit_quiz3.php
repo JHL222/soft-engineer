@@ -47,7 +47,7 @@ if ($score < 60) {
 } else {
     echo "
         Swal.fire({
-            title: 'Your score is: " . $score . "',
+            title: '당신의 점수는: " . $score . "점 입니다.',
             icon: 'success',
             confirmButtonText: '다음 문제 풀기'
         }).then((result) => {
