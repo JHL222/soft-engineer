@@ -37,7 +37,7 @@
         <li>|</li>
         <li><a href="quiz.html">퀴즈</a></li>
         <li>|</li>
-        <li><a href="./donate.html">후원</a></li>
+          <li><a href="./donate.php">후원</a></li>
       </ul>
     </nav>
   </header>
