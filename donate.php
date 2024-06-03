@@ -25,6 +25,7 @@
             overflow: auto;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         function openPopup() {
             document.getElementById('popup').style.display = 'block';
@@ -38,6 +39,14 @@
 
         function submitForm() {
             document.getElementById('donateForm').submit();
+        }
+        function noOpenPopup() {
+            Swal.fire({
+                icon: "error",
+                title: "로그인 후에 후원 신청이 가능합니다.",
+                showConfirmButton: false,
+                timer: 2000
+            });
         }
     </script>
 </head>
@@ -69,7 +78,7 @@
     if(isset($_SESSION['UserID'])) {
         echo "<button class=\"donate-button\" onclick=\"openPopup()\">후원 신청하기</button>";
     } else {
-        echo "<button class=\"donate-button\" onclick=\"alert('로그인 후에 후원 신청이 가능합니다.');\">후원 신청하기</button>";
+        echo "<button class=\"donate-button\" onclick=\"noOpenPopup()\">후원 신청하기</button>";
     }
     ?>
     <div id="popup" class="popup">
