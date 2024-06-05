@@ -86,8 +86,8 @@
             후원 제목:<input type="text" id="title" name="title" required><br/>
             은행 계좌:<input type="text" id="bank" name="bank" required><br/>
             이미지 업로드:<input type="file" id="image" name="image" required><br/>
-            <button type="button" onclick="submitForm()">신청</button>
-            <button type="button" onclick="closePopup()">취소</button>
+            <button type="button" id="insertDonate" onclick="submitForm()">신청</button>
+            <button type="button" id="cancelDonate" onclick="closePopup()">취소</button>
         </form>
     </div>
     <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
@@ -119,9 +119,9 @@
                 echo "<div class=\"sponsor-item\">";
                 echo "<img src=\"donateImage/" . $row["SponImage"] . "\" alt=\"후원 이미지\" class=\"sponsor-image\">";
                 echo "<div class=\"sponsor-text\">";
-                echo "<h3>" . $row["SponTitle"] . "</h3>";
-                echo "<p>계좌 : " . $row["SponBank"] . "</p>";
-                echo "<p>신청자 : " . $row["UserID"] . "</p>";
+                echo "<h3 id='SponTitle'>" . $row["SponTitle"] . "</h3>";
+                echo "<p id='SponBank'>계좌 : " . $row["SponBank"] . "</p>";
+                echo "<p id='UserIDID'>신청자 : " . $row["UserID"] . "</p>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
