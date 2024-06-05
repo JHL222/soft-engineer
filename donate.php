@@ -43,8 +43,7 @@
         function noOpenPopup() {
             Swal.fire({
                 icon: "error",
-                title: "로그인이 되어있지 않습니다.",
-                text: "로그인 후 후원 신청이 가능합니다",
+                title: "로그인 후에 후원 신청이 가능합니다.",
                 showConfirmButton: false,
                 timer: 2000
             });
