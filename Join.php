@@ -31,7 +31,16 @@ if ($conn->query($sql) === TRUE) {
     echo "}, 3000);";
     echo "</script>";
 } else {
-    echo "오류: " . $sql . "<br>" . $conn->error;
+    if ($conn->errno == 1062) {
+        echo "오류: 이미 존재하는 ID입니다.";
+    } else {
+        echo "오류: " . $sql . "<br>" . $conn->error;
+    }
+    echo "<script>";
+    echo "setTimeout(function() {";
+    echo "    self.close();";
+    echo "}, 3000);";
+    echo "</script>";
 }
 
 $conn->close();

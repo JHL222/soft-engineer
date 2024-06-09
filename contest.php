@@ -66,13 +66,13 @@
       ?>
           <div class="sponsor-row">
               <div class="sponsor-item">
-                  <a href="<?php echo $contentLink; ?>" class="donate-button">참여하기</a>
                   <img src="<?php echo $contestImage; ?>" alt="후원 이미지" class="sponsor-image">
                   <div class="sponsor-text">
                       <h3 id="contestTitle"><?php echo $contestTitle; ?></h3>
                       <p id="contestDesc"><?php echo $contestDesc; ?></p>
-                      <p id="contestStart">시작일: <?php echo $start_Date; ?></p><br>
+                      <p id="contestStart">시작일: <?php echo $start_Date; ?></p>
                       <p id="contestEnd">종료일: <?php echo $end_Date; ?></p>
+                      <a href="<?php echo $contentLink; ?>" class="donate-button">참여하기</a>
                   </div>
               </div>
           </div>

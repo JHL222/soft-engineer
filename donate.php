@@ -43,7 +43,8 @@
         function noOpenPopup() {
             Swal.fire({
                 icon: "error",
-                title: "로그인 후에 후원 신청이 가능합니다.",
+                title: "로그인이 되어있지 않습니다.",
+                text: "로그인 후 후원 신청이 가능합니다",
                 showConfirmButton: false,
                 timer: 2000
             });
@@ -81,6 +82,7 @@
         echo "<button class=\"donate-button\" onclick=\"noOpenPopup()\">후원 신청하기</button>";
     }
     ?>
+    <div id="popup-overlay" class="popup-overlay">
     <div id="popup" class="popup">
         <form id="donateForm" action="donate_process.php" method="post" enctype="multipart/form-data">
             후원 제목:<input type="text" id="title" name="title" required><br/>
@@ -90,6 +92,7 @@
             <button type="button" id="cancelDonate" onclick="closePopup()">취소</button>
         </form>
     </div>
+</div>
     <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
     <div class="sponsor-section">
         <?php
@@ -115,13 +118,14 @@
         } else if ($result->num_rows > 0) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
+                $imageSrc = !empty($row["SponImage"]) ? "donateImage/" . $row["SponImage"] : "donateImage/후원.png";
                 echo "<div class=\"sponsor-row\">";
                 echo "<div class=\"sponsor-item\">";
-                echo "<img src=\"donateImage/" . $row["SponImage"] . "\" alt=\"후원 이미지\" class=\"sponsor-image\">";
+                echo "<img src=\"" . $imageSrc . "\" alt=\"후원 이미지\" class=\"sponsor-image\">";
                 echo "<div class=\"sponsor-text\">";
                 echo "<h3 id='SponTitle'>" . $row["SponTitle"] . "</h3>";
-                echo "<p id='SponBank'>계좌 : " . $row["SponBank"] . "</p>";
                 echo "<p id='UserIDID'>신청자 : " . $row["UserID"] . "</p>";
+                echo "<p id='SponBank'>계좌 : " . $row["SponBank"] . "</p>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
